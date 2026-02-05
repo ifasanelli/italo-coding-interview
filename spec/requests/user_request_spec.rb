@@ -35,5 +35,16 @@ RSpec.describe 'Users', type: :request do
       it 'returns all the users' do
       end
     end
+
+    context 'when fetching users by username' do
+      it 'returns users with partial matches' do
+        create(:user, username: 'Italo Fasanelli')
+        create(:user, username: 'Johnatan Radünz')
+
+        get users_path(username: 'alo')
+
+        expect(result.size).to eq(1)
+      end
+    end
   end
 end
