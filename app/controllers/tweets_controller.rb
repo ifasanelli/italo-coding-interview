@@ -1,7 +1,9 @@
 class TweetsController < ApplicationController
   def index
-    page = params[:page].present? ? params[:page] : 0
-    per_page = params[:per_page].present? ? params[:per_page] : 5
+    page = params[:page].present? ? params[:page].to_i : 1
+    per_page = params[:per_page].present? ? params[:per_page].to_i : 5
+    offset = (page - 1) * per_page
+
     tweets = Tweet
               .by_user(params[:user_id])
               .offset(page)
