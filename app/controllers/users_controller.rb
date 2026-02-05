@@ -12,5 +12,4 @@ class UsersController < ApplicationController
   def search_params
     params.permit(:username)
   end
-
 end
