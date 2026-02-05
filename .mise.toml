@@ -1,0 +1,5 @@
+[tools]
+# Fixa a versão do Ruby usada neste projeto.
+# (O mise não está lendo o `.ruby-version` automaticamente aqui, então declaramos explicitamente.)
+ruby = "2.7.6"
+
